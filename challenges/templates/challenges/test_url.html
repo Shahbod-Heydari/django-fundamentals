@@ -1,16 +1,10 @@
 {% extends "base.html" %}
-{% load static %}
 
-{% block page_title %}document{% endblock %}
+{% block page_title %}testing URLS{% endblock  %}
 
-{% block header_refrences %}
-    <link rel='stylesheet' href={% static 'challenges/challenges.css' %}>
-{% endblock  %}
 
 {% block content %}
-    {% for day in days %}
-    <li><a href = '{% url 'days-of-week' day %}'>  {{day}} </a> <li>
-    {% endfor %}
+    {% include "challenges/includes/header.html" with active_page="filter usage" %}
 
     <h1> <a href = '/challenges'> front page </a> <h1> <!--http://127.0.0.1:8000/challenges/-->
     <h1> <a href = 'challenges/'> don't press </a> <h1> <!--http://127.0.0.1:8000/challenges/challenges/, this doesn't work--> 

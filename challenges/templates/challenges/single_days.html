@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}{{ day|title }}{% endblock %}
+
+{% block header_refrences %}
+    <link rel="stylesheet" href="{% static 'challenges/single_days.css' %}">
+{% endblock %}
+
+{% block content %}
+    <main class="day-page">
+        <div class="day-card">
+            <h1>It's {{ day|title }}!</h1>
+            <p>Welcome to {{ day|title }}.</p>
+            <a href="/challenges">Back to Days</a>
+        </div>
+    </main>
+{% endblock %}

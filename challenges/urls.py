@@ -8,6 +8,7 @@ urlpatterns = [
     # it will connect the sunday address to the index function
     path('monday', views.index_monday),
     path('wednesday', views.index_wednesday),
+    path('tests', views.test_urls),
     path('<int:num>', views.day_num),
     path('days', views.all_days),
     path('<word>', views.dynamic_url, name='days-of-week'), # this a dynamic url meaning everything after challenges/ would land here exept the 3 days we determined seperately

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}Days{% endblock %}
+
+{% block header_refrences %}
+    <link rel="stylesheet" href="{% static 'challenges/days_list.css' %}">
+{% endblock %}
+
+{% block content %} <!--the classes in here are html commands and are not related to DTL or django-->
+    <main class="days-page">
+        <h1>Days of the Week</h1>
+
+        <ul class="days-list">
+            {% for day in days %}
+                <li>
+                    <a href="{% url 'days-of-week' day %}">{{ day|title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+{% endblock %}

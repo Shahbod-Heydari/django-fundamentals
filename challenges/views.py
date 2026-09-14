@@ -14,7 +14,7 @@ days = {
     'sunday' : 'this is sunday',
     'monday' : 'this is monday',
     'tuesday' : 'this is tuesday',
-    'wednesay' : 'this is wednesday',
+    'wednesday' : 'this is wednesday',
     'thursday' : 'this is thursday',
     'friday' : 'this is friday',
 }
@@ -36,30 +36,45 @@ def days_list(request):
     days_list = list(days.keys())
     context = {
         "days": days_list,
-        "special": "sunday",
-        "year": None,
-        "month": 7
     }
 
-    return render(request,'challenges/index.html',context)
+    return render(request,'challenges/days_list.html',context)
 
 
 
 def dynamic_url(request, word):
-    response = render_to_string('challenges/challenges.html') # using the template
+    response = render_to_string('challenges/first.html') # using the template
     return HttpResponse(response + word) # word will be shown under the template
 
 
 
 def index_sunday(request):
-    return HttpResponse("this is sunday")
+    context = {
+        'day' : 'sunday'
+    }
+    return render(request, 'challenges/single_days.html', context)
 
 def index_monday(request):
-    return HttpResponse("this is monday")
+    context = {
+        'day' : 'monday'
+    }
+    return render(request, 'challenges/single_days.html', context)
 
 def index_wednesday(request):
-    return HttpResponse("this is wednesday")
+    context = {
+        'day' : 'wednesday'
+    }
+    return render(request, 'challenges/single_days.html', context)
 
+
+
+def test_urls(request):
+    context = {
+        "special": "sunday",
+        "year": None,
+        "month": 7
+    }
+    return render(request, "challenges/test_url.html", context)
 
 
 def day_num(request, num):
@@ -89,7 +104,7 @@ def dayToName_dynamic(request,day,name):
 
 
 def all_days(request):
-     return render(request,'challenges/challenges.html')
+     return render(request,'challenges/first.html')
 
 
 
@@ -104,4 +119,4 @@ def day_and_name_dyanmic(request,num,name):
             "name": name,
             "phrase" : "HOW IS YOUR DAY BY THE WAY?"
         }
-        return render(request,'challenges/challenges2.html', contex)
+        return render(request,'challenges/greetings.html', contex)

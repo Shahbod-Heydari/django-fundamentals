@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}Days Info{% endblock page_title %}
+
+{% block header_refrences %}
+    <link rel="stylesheet" href="{% static 'challenges/greetings.css' %}">
+{% endblock %}
+
+{% block content %}
+    
+    <main class="greeting-page">
+        <div class="greeting-card">
+            <h1>This is the another Page</h1>
+
+            <h2>
+                Hi {{ name|upper }}, this is for dynamic data and today is {{ day }}
+            </h2>
+
+            <h3>{{ phrase|title }}</h3>
+        </div>
+    </main>
+{% endblock content %}

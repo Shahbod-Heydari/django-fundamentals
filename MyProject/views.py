@@ -5,4 +5,4 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("this is the main front page")
+    return render(request,"home.html")

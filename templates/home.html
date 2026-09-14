@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block header_refrences %}
+    <link rel='stylesheet' href='{% static "front_page.css" %}'>
+{% endblock  %}
+
+{% block content %}
+    <main class="hero">
+        <div class="hero-content">
+            <h1>Explore the Week</h1>
+            <p>Discover the days of the week through a simple Django project.</p>
+            <a href="/challenges" class="explore-button">
+                Explore the Days
+            </a>
+        </div>
+    </main>
+{% endblock content %}
