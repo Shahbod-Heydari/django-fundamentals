@@ -1,6 +1,11 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block page_title %}document{% endblock %}
+
+{% block header_refrences %}
+    <link rel='stylesheet' href={% static 'challenges/challenges.css' %}>
+{% endblock  %}
 
 {% block content %}
     {% for day in days %}

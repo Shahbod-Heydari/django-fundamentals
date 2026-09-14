@@ -1,5 +1,5 @@
 from django.shortcuts import render 
-from django.http import HttpResponse , HttpResponseNotFound , HttpResponseRedirect 
+from django.http import HttpResponse , HttpResponseNotFound , HttpResponseRedirect , Http404
 from django.urls import reverse
 from django.template.loader import render_to_string
 
@@ -82,8 +82,9 @@ def dayToName_dynamic(request,day,name):
     day_data = days.get(day)
     if day_data is not None:
         return HttpResponse(f'hi {name}, {day_data}')
-    
-    return HttpResponseNotFound('day not found')
+    raise Http404()
+    # response = render_to_string("404.html")
+    # return HttpResponseNotFound(response)
 
 
 
