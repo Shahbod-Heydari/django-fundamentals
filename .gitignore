@@ -5,7 +5,6 @@ __pycache__/
 
 # Database
 *.sqlite3
-db.sqlite3
 
 # Virtual environment
 venv/
@@ -23,3 +22,6 @@ env/
 # Django
 media/
 staticfiles/
+
+# Logs
+*.log
